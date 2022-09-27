@@ -1,11 +1,15 @@
 /* eslint-disable react/jsx-no-undef */
 import Container from './components/Container/Container';
 import Profile from './components/Profile/Profile';
-import user from './Data/user.json';
 import Section from 'components/Statistics/Section/Section';
 import Statistics from 'components/Statistics/Statistics';
+import TransactionHistory from 'components/Transactions/TransactionHistory';
+import FriendList from './components/FriendList/FriendList';
 
 import StatisticalData from 'Data/data.json';
+import user from './Data/user.json';
+import transactions from './Data/transactions.json';
+import friends from './Data/friends.json';
 
 export const App = () => {
   return (
@@ -19,8 +23,12 @@ export const App = () => {
       />
 
       <Section>
-        <Statistics title="Upload stats" stats={StatisticalData} />.
+        <Statistics title="Upload stats" stats={StatisticalData} />
       </Section>
+
+      <FriendList friends={friends} />
+
+      <TransactionHistory items={transactions} />
     </Container>
   );
 };
